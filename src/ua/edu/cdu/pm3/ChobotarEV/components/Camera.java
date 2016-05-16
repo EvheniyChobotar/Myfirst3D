@@ -4,6 +4,9 @@ import ua.edu.cdu.pm3.ChobotarEV.rendering.Render;
 import org.lwjgl.input.Mouse;
 import static org.lwjgl.opengl.GL11.*;
 import org.lwjgl.util.vector.Vector3f;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.Model;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.SkyDome;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.Terrain;
 
 public class Camera {
 
@@ -60,9 +63,10 @@ public class Camera {
 //      -moveVector.y-1.4f means that your y is your feet, and y+2.4 is your head.
         glTranslatef(-moveVector.x, -moveVector.y-1.4f, -moveVector.z);
         
-        moveVector.y = Render.heights.calculateHeight(moveVector.x*4, moveVector.z*4)*Render.maxY;
-        glCallList(Render.objectList);
-        glCallList(Render.terrainList);
+        moveVector.y = Terrain.heights.calculateHeight(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
+        glCallList(Model.objectList);
+        glCallList(Terrain.terrainList);
+        glCallList(SkyDome.list);
         
     }
 
@@ -98,8 +102,6 @@ public class Camera {
             }
         }
     }
-
-    
     
     public boolean isMoveForward() {
         return moveForward;

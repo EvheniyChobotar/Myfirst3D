@@ -4,7 +4,7 @@ import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.TextureLoader;
 import org.newdawn.slick.util.ResourceLoader;
 
-public class TexturesManagement {
+public class TexturesLoader {
     
      public Texture loadTextures(String path,String name) {
         Texture nullTexture = null;

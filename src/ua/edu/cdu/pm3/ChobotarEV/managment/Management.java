@@ -7,6 +7,10 @@ import ua.edu.cdu.pm3.ChobotarEV.components.Input;
 import ua.edu.cdu.pm3.ChobotarEV.main.Main;
 
 import org.lwjgl.opengl.Display;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.Model;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.SkyDome;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.Terrain;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.Textures;
 
 public class Management {
 
@@ -21,16 +25,24 @@ public class Management {
 
         window      = new Window();
             window.createWindow(Main.WIDTH,Main.HEIGHT,Main.TITLE);
+            
 //      init inout system (keyoard and mouse)                        
         keyboard    = new Input();	
             keyboard.createKeyboard();
-
-//      init generateTerrain system
+            
+        Terrain terrain = new Terrain();
+            terrain.drawTerrain();
+            
+        Model model = new Model();
+            model.initializeModels();
+            model.drawModel();
+            
+        Textures textures = new Textures();
+            textures.initializeTextures();
+        SkyDome sky = new SkyDome();
+            sky.drawSphere();
         render      = new Render();
             render.initialize3D();
-            render.initializeModels();
-            render.initializeTextures();
-            render.generateTerrain(); 
             
         //      init player behavior 
         camera      = new Camera();

@@ -1,4 +1,4 @@
-package ua.edu.cdu.pm3.ChobotarEV.rendering;
+package ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents;
 
 
 import org.lwjgl.util.vector.Vector3f;

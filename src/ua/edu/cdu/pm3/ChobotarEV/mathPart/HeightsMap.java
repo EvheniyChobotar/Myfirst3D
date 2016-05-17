@@ -1,17 +1,17 @@
 package ua.edu.cdu.pm3.ChobotarEV.mathPart;
 
-import ua.edu.cdu.pm3.ChobotarEV.managment.HeightsMapLoader;
+import ua.edu.cdu.pm3.ChobotarEV.managment.fileLoaders.HeightsMapLoader;
 
 
 
-public class HeightsBiLinearInterpolation {
+public class HeightsMap {
     
     public String path;
     //An array of points to represent the y value at a given point (x,z)
     public float[][]    height;
    
     
-    public  HeightsBiLinearInterpolation() {
+    public  HeightsMap() {
         HeightsMapLoader heightsMapLoader = new HeightsMapLoader();
         this.path   = "res/heights.png";
         this.height = heightsMapLoader.loadHeightsMap(path, height);
@@ -28,7 +28,7 @@ public class HeightsBiLinearInterpolation {
             return 0;
         }
     }
-
+//  bi-linear interpolation
     public float calculateHeight(float x, float z){
 
         float x1, x2, y1, y2, Q11, Q12, Q21, Q22;

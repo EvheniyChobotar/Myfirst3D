@@ -1,19 +1,19 @@
-package ua.edu.cdu.pm3.ChobotarEV.rendering;
+package ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents;
 
 import static org.lwjgl.opengl.GL11.*;
 import ua.edu.cdu.pm3.ChobotarEV.mathPart.ColorsMap;
-import ua.edu.cdu.pm3.ChobotarEV.mathPart.HeightsBiLinearInterpolation;
+import ua.edu.cdu.pm3.ChobotarEV.mathPart.HeightsMap;
 
 public class Terrain {
     
     public static int       terrainList;
     public static float     zoom = 0.25f;
     public static final int maxY = 50;
-    public static HeightsBiLinearInterpolation heights ;
+    public static HeightsMap heights ;
     public static ColorsMap colors;
     
     public void drawTerrain() {
-        heights = new HeightsBiLinearInterpolation();
+        heights = new HeightsMap();
         colors  = new ColorsMap();
         
         terrainList = glGenLists(1);

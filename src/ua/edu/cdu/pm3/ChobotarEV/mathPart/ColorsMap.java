@@ -1,6 +1,6 @@
 package ua.edu.cdu.pm3.ChobotarEV.mathPart;
 
-import ua.edu.cdu.pm3.ChobotarEV.managment.ColorMapLoader;
+import ua.edu.cdu.pm3.ChobotarEV.managment.fileLoaders.ColorMapLoader;
 
 public class ColorsMap {
 

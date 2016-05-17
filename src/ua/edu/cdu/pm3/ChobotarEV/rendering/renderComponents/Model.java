@@ -1,11 +1,11 @@
-package ua.edu.cdu.pm3.ChobotarEV.rendering;
+package ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import static org.lwjgl.opengl.GL11.*;
 import org.lwjgl.util.vector.Vector3f;
-import ua.edu.cdu.pm3.ChobotarEV.managment.ModelsLoader;
+import ua.edu.cdu.pm3.ChobotarEV.managment.fileLoaders.ModelsLoader;
 
 public class Model {
     public List<Vector3f>   vertices    = new ArrayList<>();

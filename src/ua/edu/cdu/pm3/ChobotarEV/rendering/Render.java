@@ -8,7 +8,7 @@ import org.lwjgl.util.glu.GLU;
 public class Render {
     
     public void initialize3D() {
-        //Start 3D Stuff
+//      Start 3D Stuff
 //      matrix for projection all objects in 3d to display
         glMatrixMode(GL_PROJECTION);
 //      chenge set current matrix to identity 
@@ -38,7 +38,7 @@ public class Render {
     }
     
     public void clearScreen() {
-        //Clear the screen
+//      Clear the screen
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 //        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
         glLoadIdentity();

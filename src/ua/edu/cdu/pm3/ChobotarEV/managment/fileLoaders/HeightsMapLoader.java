@@ -1,4 +1,4 @@
-package ua.edu.cdu.pm3.ChobotarEV.managment;
+package ua.edu.cdu.pm3.ChobotarEV.managment.fileLoaders;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;

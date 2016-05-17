@@ -1,12 +1,12 @@
-package ua.edu.cdu.pm3.ChobotarEV.managment;
+package ua.edu.cdu.pm3.ChobotarEV.managment.fileLoaders;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import org.lwjgl.util.vector.Vector3f;
-import ua.edu.cdu.pm3.ChobotarEV.rendering.Face;
-import ua.edu.cdu.pm3.ChobotarEV.rendering.Model;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Face;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Model;
 
 public class ModelsLoader {
     public static Model loadModel(File file) {

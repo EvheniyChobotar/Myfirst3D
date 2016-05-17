@@ -4,9 +4,9 @@ import ua.edu.cdu.pm3.ChobotarEV.rendering.Render;
 import org.lwjgl.input.Mouse;
 import static org.lwjgl.opengl.GL11.*;
 import org.lwjgl.util.vector.Vector3f;
-import ua.edu.cdu.pm3.ChobotarEV.rendering.Model;
-import ua.edu.cdu.pm3.ChobotarEV.rendering.SkyDome;
-import ua.edu.cdu.pm3.ChobotarEV.rendering.Terrain;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Model;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.SkyDome;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Terrain;
 
 public class Camera {
 
@@ -66,7 +66,7 @@ public class Camera {
         moveVector.y = Terrain.heights.calculateHeight(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
         glCallList(Model.objectList);
         glCallList(Terrain.terrainList);
-        glCallList(SkyDome.list);
+        glCallList(SkyDome.skyList);
         
     }
 

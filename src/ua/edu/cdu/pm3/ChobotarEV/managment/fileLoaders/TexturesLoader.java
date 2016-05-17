@@ -1,4 +1,4 @@
-package ua.edu.cdu.pm3.ChobotarEV.managment;
+package ua.edu.cdu.pm3.ChobotarEV.managment.fileLoaders;
 
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.TextureLoader;

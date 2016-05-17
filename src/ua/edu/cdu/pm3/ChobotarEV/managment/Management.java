@@ -7,40 +7,47 @@ import ua.edu.cdu.pm3.ChobotarEV.components.Input;
 import ua.edu.cdu.pm3.ChobotarEV.main.Main;
 
 import org.lwjgl.opengl.Display;
-import ua.edu.cdu.pm3.ChobotarEV.rendering.Model;
-import ua.edu.cdu.pm3.ChobotarEV.rendering.SkyDome;
-import ua.edu.cdu.pm3.ChobotarEV.rendering.Terrain;
-import ua.edu.cdu.pm3.ChobotarEV.rendering.Textures;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Model;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.SkyDome;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Terrain;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Textures;
 
 public class Management {
 
-    Render  render;
-    Input   keyboard;
-    Window  window;
-    Camera  camera;
+    Render      render;
+    Input       keyboard;
+    Window      window;
+    Camera      camera;
+    Terrain     terrain;
+    Model       model;
+    Textures    textures;
+    SkyDome     sky;
+    
     boolean isRunning;
     
     public void initialize() {
 //      init window 
-
         window      = new Window();
             window.createWindow(Main.WIDTH,Main.HEIGHT,Main.TITLE);
             
-//      init inout system (keyoard and mouse)                        
+//      init input system (keyoard and mouse)                        
         keyboard    = new Input();	
             keyboard.createKeyboard();
             
-        Terrain terrain = new Terrain();
+        terrain = new Terrain();
             terrain.drawTerrain();
             
-        Model model = new Model();
+        model = new Model();
             model.initializeModels();
             model.drawModel();
             
-        Textures textures = new Textures();
+        textures = new Textures();
             textures.initializeTextures();
-        SkyDome sky = new SkyDome();
-            sky.drawSphere();
+            
+        sky = new SkyDome();
+            sky.calculateDomeCoordinates();
+            sky.drawDome();
+            
         render      = new Render();
             render.initialize3D();
             

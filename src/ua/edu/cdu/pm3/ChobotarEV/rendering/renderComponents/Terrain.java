@@ -10,7 +10,7 @@ public class Terrain {
     public static float     zoom = 0.25f;
     public static final int maxY = 50;
     public static HeightsMap heights ;
-    public static ColorsMap colors;
+    public static ColorsMap  colors;
     
     public void drawTerrain() {
         heights = new HeightsMap();

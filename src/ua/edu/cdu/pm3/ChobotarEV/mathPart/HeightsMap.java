@@ -2,8 +2,6 @@ package ua.edu.cdu.pm3.ChobotarEV.mathPart;
 
 import ua.edu.cdu.pm3.ChobotarEV.managment.fileLoaders.HeightsMapLoader;
 
-
-
 public class HeightsMap {
     
     public String path;
@@ -13,12 +11,10 @@ public class HeightsMap {
     
     public  HeightsMap() {
         HeightsMapLoader heightsMapLoader = new HeightsMapLoader();
-        this.path   = "res/heights.png";
+        this.path   = "res/map/heights.png";
         this.height = heightsMapLoader.loadHeightsMap(path, height);
         
     }
-
-    
    
     public float getHeightAt(int x, int z){
         //Just returns the y value at the point x,z
@@ -28,6 +24,7 @@ public class HeightsMap {
             return 0;
         }
     }
+    
 //  bi-linear interpolation
     public float calculateHeight(float x, float z){
 

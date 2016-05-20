@@ -35,18 +35,19 @@ public class Management {
             keyboard.createKeyboard();
             
         terrain = new Terrain();
-            terrain.drawTerrain();
-            
+//            terrain.drawTerrain();
+        textures = new Textures();
+//            textures.initializeTextures();            
+
         model = new Model();
             model.initializeModels();
             model.drawModel();
             
-        textures = new Textures();
-            textures.initializeTextures();
+        
             
         sky = new SkyDome();
-            sky.calculateDomeCoordinates();
-            sky.drawDome();
+//            sky.calculateDomeCoordinates();
+//            sky.drawDome();
             
         render      = new Render();
             render.initialize3D();

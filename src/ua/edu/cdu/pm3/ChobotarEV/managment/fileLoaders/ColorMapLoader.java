@@ -8,11 +8,11 @@ import javax.imageio.ImageIO;
 
 public class ColorMapLoader {
     
-    public float[][] loadColorsMap(String fname, float[][] cmap, int needed) {
+    public float[][] loadColorsMap(String fname, float[][] colorMap, int needed) {
        
         try {
             BufferedImage image = ImageIO.read(new File(fname));
-            cmap = new float[image.getWidth()][image.getHeight()];
+            colorMap = new float[image.getWidth()][image.getHeight()];
             for(int x=0;x<image.getWidth();x++) 
                 for(int y=0;y<image.getHeight();y++) {
                    
@@ -20,13 +20,13 @@ public class ColorMapLoader {
                     
                     switch(needed) {
                         case 1:
-                            cmap[x][y] = (col.getRed())/255f;
+                            colorMap[x][y] = (col.getRed())/255f;
                                 break;
                         case 2:
-                            cmap[x][y] = (col.getGreen())/255f;
+                            colorMap[x][y] = (col.getGreen())/255f;
                                 break;
                         case 3:
-                            cmap[x][y] = (col.getBlue())/255f;
+                            colorMap[x][y] = (col.getBlue())/255f;
                                 break;
                         default:
                     }
@@ -34,6 +34,6 @@ public class ColorMapLoader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return cmap;
+        return colorMap;
     }
 }

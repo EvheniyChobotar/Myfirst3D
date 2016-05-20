@@ -4,17 +4,21 @@ import org.newdawn.slick.opengl.Texture;
 import ua.edu.cdu.pm3.ChobotarEV.managment.fileLoaders.TexturesLoader;
 
 public class Textures {
-    String  resPath     = "res/textures",
-            texFloor    = "floor.png",
-            texStone    = "test.jpg",
-            texSky      = "Sky_horiz_15_4096.jpg";
+    String  resourcesPath   = "textures/",
+            floor           = "floor.jpg",
+            stone           = "test.jpg",
+            sky             = "sky.jpg",
+            white           = "white.jpg";
     
     public static Texture   textureFloor,
                             textureStone,
-                            textureSky;
+                            textureSky,
+                            textureWhite;
     public void initializeTextures() {
-        textureFloor = new TexturesLoader().loadTextures(resPath, texFloor);
-        textureStone = new TexturesLoader().loadTextures(resPath, texStone);
-        textureSky =  new TexturesLoader().loadTextures(resPath, texSky);
+        textureFloor = new TexturesLoader().loadTextures(resourcesPath+floor);
+        textureStone = new TexturesLoader().loadTextures(resourcesPath+stone);
+        textureSky   = new TexturesLoader().loadTextures(resourcesPath+sky);
+        textureWhite = new TexturesLoader().loadTextures(resourcesPath+white);
+        
     }
 }

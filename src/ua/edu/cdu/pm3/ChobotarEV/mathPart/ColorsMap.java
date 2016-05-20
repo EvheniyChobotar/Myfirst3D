@@ -12,7 +12,7 @@ public class ColorsMap {
     
     public ColorsMap() {
         ColorMapLoader colorMapLoader    = new ColorMapLoader();
-        this.path   = "res/colors.png";
+        this.path   = "res/map/colors.png";
         this.red    = colorMapLoader.loadColorsMap(path, red,   1);
         this.green  = colorMapLoader.loadColorsMap(path, green, 2);
         this.blue   = colorMapLoader.loadColorsMap(path, blue,  3);

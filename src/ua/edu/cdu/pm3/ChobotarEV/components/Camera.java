@@ -63,10 +63,10 @@ public class Camera {
 //      -moveVector.y-1.4f means that your y is your feet, and y+2.4 is your head.
         glTranslatef(-moveVector.x, -moveVector.y-1.4f, -moveVector.z);
         
-        moveVector.y = Terrain.heights.calculateHeight(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
+//        moveVector.y = Terrain.heights.calculateHeight(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
         glCallList(Model.objectList);
-        glCallList(Terrain.terrainList);
-        glCallList(SkyDome.skyList);
+//        glCallList(Terrain.terrainList);
+//        glCallList(SkyDome.skyList);
         
     }
 

@@ -1,7 +1,7 @@
 package ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents;
 
 import static org.lwjgl.opengl.GL11.*;
-import ua.edu.cdu.pm3.ChobotarEV.rendering.util.Vertex;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.util.SkyDomeVertex;
 
 public class SkyDome {
     public static int skyList;
@@ -13,7 +13,7 @@ public class SkyDome {
 //we are using strips, to connect the dots, and each strip is made up of 4 vertices,
 //we need to multiply that result by 4 to get the actual number    
     int             numOfVertices =(int) ((360/dTheta)*(90/dPi)*4);
-    public Vertex   Vertices;
+    public SkyDomeVertex   Vertices;
     double x, y, z;
 /*
     start by converting the 3D point P to spherical coordinates
@@ -66,10 +66,10 @@ public class SkyDome {
 /*      calculation of each point of the sphere
         ρ , ø
         ρ + ∆ρ, ø
-        ρ, ø + ∆ø
+        ρ, ø + ∆ø 
         ρ +∆ρ, ø + ∆ø
 */
-        Vertices = new Vertex(numOfVertices);
+        Vertices = new SkyDomeVertex(numOfVertices);
         int i=0;
         for (double pi = 0.0; pi <= 90.0-dPi; pi += dPi) 
             for (double theta = 0; theta <= 360.0-dTheta; theta += dTheta) {

@@ -6,7 +6,7 @@ import org.newdawn.slick.util.ResourceLoader;
 
 public class TexturesLoader {
     
-     public Texture loadTextures(String path) {
+     public static Texture loadTextures(String path) {
         Texture nullTexture = null;
         try {
             return TextureLoader.getTexture("JPG", ResourceLoader.getResourceAsStream("res/"+path));

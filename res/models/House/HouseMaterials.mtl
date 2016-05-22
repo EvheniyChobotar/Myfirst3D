@@ -7,7 +7,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 1
-map_Bump textures\\wallpaper nor.jpg
+map_Bump models/House/wallpaper_nor.jpg
 map_Kd textures\\building_col_3.JPG
 
 newmtl Ceiling_white_2.001
@@ -19,7 +19,7 @@ Ke 0.020000 0.019932 0.018891
 Ni 1.000000
 d 1.000000
 illum 1
-map_Bump textures\\wallpaper nor.jpg
+map_Bump models/House/wallpaper_nor.jpg
 map_Kd textures\\building_col_3.JPG
 
 newmtl Door_Frame.001
@@ -32,7 +32,7 @@ Ni 1.000000
 d 1.000000
 illum 2
 map_Kd textures\Future_Door_01_Ao.jpg
-map_Bump textures\\Future_Door_01_Nor.jpg
+map_Bump models/House/Future_Door_01_Nor.jpg
 map_Ks textures\\AussenWand_C.jpg
 refl textures\\Reflexion.jpg
 
@@ -46,7 +46,7 @@ Ni 1.000000
 d 1.000000
 illum 2
 map_Kd textures\Future_Door_02_Ao.jpg
-map_Bump textures\\Future_Door_01_Nor.jpg
+map_Bump models/House/Future_Door_01_Nor.jpg
 map_Ks textures\\AussenWand_C.jpg
 refl textures\\Reflexion.jpg
 
@@ -60,7 +60,7 @@ Ni 1.000000
 d 1.000000
 illum 1
 map_Kd C:\Users\the3dpc\Desktop\Futuristic Apartment Buildung\BGE_Building60\textures\builing_col.jpg
-map_Bump textures\\Building_Nor.jpg
+map_Bump models/House/Building_Nor.jpg
 map_Ks textures\\AussenWand_C.jpg
 
 newmtl FLoor_white.001_NONE
@@ -72,7 +72,7 @@ Ke 0.010000 0.009037 0.009293
 Ni 1.000000
 d 1.000000
 illum 1
-map_Bump textures\\Building_Nor.jpg
+map_Bump models/House/Building_Nor.jpg
 map_Kd textures\\building_col_3.JPG
 map_Ks textures\\AussenWand_C.jpg
 
@@ -86,7 +86,7 @@ Ni 1.000000
 d 0.500000
 illum 2
 map_Kd textures\Glas_Nor.jpg
-map_Bump textures\\Glas_Nor.jpg
+map_Bump models/House/Glas_Nor.jpg
 map_Ks textures\\AussenWand_C.jpg
 refl textures\\REF 1.jpg
 
@@ -100,7 +100,7 @@ Ni 1.000000
 d 0.500000
 illum 2
 map_Kd textures\Glas_AO.jpg
-map_Bump textures\\Glas_Nor.jpg
+map_Bump models/House/Glas_Nor.jpg
 map_Ks textures\\AussenWand_C.jpg
 refl textures\\REF 1.jpg
 
@@ -114,7 +114,7 @@ Ni 1.000000
 d 1.000000
 illum 1
 map_Kd textures\building_col_3.JPG
-map_Bump textures\\Building_Nor.jpg
+map_Bump models/House/Building_Nor.jpg
 
 newmtl Inside_Floor_green_2.001
 Ns 96.078431
@@ -126,7 +126,7 @@ Ni 1.000000
 d 1.000000
 illum 1
 map_Kd textures\building_col_3.JPG
-map_Bump textures\\Building_Nor.jpg
+map_Bump models/House/Building_Nor.jpg
 
 newmtl Inside_Wood.001
 Ns 96.078431
@@ -138,7 +138,7 @@ Ni 1.000000
 d 1.000000
 illum 3
 map_Kd textures\building_col_3.JPG
-map_Bump textures\\wooden floor nor.jpg
+map_Bump models/House/wooden_floor_nor.jpg
 map_Ks textures\\AussenWand_C.jpg
 
 newmtl Inside_wall_green.001
@@ -151,7 +151,7 @@ Ni 1.000000
 d 1.000000
 illum 1
 map_Kd textures\building_col_3.JPG
-map_Bump textures\\wallpaper nor.jpg
+map_Bump models/House/wallpaper_nor.jpg
 
 newmtl Inside_wall_green_2.001
 Ns 96.078431
@@ -163,7 +163,7 @@ Ni 1.000000
 d 1.000000
 illum 1
 map_Kd textures\building_col_3.JPG
-map_Bump textures\\wallpaper nor.jpg
+map_Bump models/House/wallpaper_nor.jpg
 
 newmtl Inside_wall_white_2.001
 Ns 96.078431
@@ -175,7 +175,7 @@ Ni 1.000000
 d 1.000000
 illum 1
 map_Kd textures\building_col_3.JPG
-map_Bump textures\\wallpaper nor.jpg
+map_Bump models/House/wallpaper_nor.jpg
 
 newmtl Inside_wall_yellow.001
 Ns 96.078431
@@ -187,7 +187,7 @@ Ni 1.000000
 d 1.000000
 illum 1
 map_Kd textures\building_col_3.JPG
-map_Bump textures\\wallpaper nor.jpg
+map_Bump models/House/wallpaper_nor.jpg
 
 newmtl Inside_wall_yellow_2.001
 Ns 96.078431
@@ -199,7 +199,7 @@ Ni 1.000000
 d 1.000000
 illum 1
 map_Kd textures\building_col_3.JPG
-map_Bump textures\\wallpaper nor.jpg
+map_Bump models/House/wallpaper_nor.jpg
 
 newmtl Lamps_Frames.001
 Ns 96.078431
@@ -211,7 +211,7 @@ Ni 1.000000
 d 1.000000
 illum 2
 map_Kd C:\Users\the3dpc\Desktop\Futuristic Apartment Buildung\BGE_Building60\textures\builing_col.jpg
-map_Bump textures\\Building_Nor.jpg
+map_Bump models/House/Building_Nor.jpg
 map_Ks textures\\AussenWand_C.jpg
 refl textures\\Reflexion.jpg
 
@@ -225,7 +225,7 @@ Ni 1.000000
 d 1.000000
 illum 2
 map_Kd C:\Users\the3dpc\Desktop\Futuristic Apartment Buildung\BGE_Building60\textures\builing_col.jpg
-map_Bump textures\\Building_Nor.jpg
+map_Bump models/House/Building_Nor.jpg
 map_Ks textures\\AussenWand_C.jpg
 refl textures\\Reflexion.jpg
 
@@ -239,7 +239,7 @@ Ni 1.000000
 d 1.000000
 illum 1
 map_Kd C:\Users\the3dpc\Desktop\Futuristic Apartment Buildung\BGE_Building60\textures\builing_col.jpg
-map_Bump textures\\Building_Nor.jpg
+map_Bump models/House/Building_Nor.jpg
 refl textures\\Reflexion.jpg
 
 newmtl Material
@@ -263,7 +263,7 @@ Ni 1.000000
 d 1.000000
 illum 2
 map_Kd textures\building_col_3.JPG
-map_Bump textures\\Building_Nor.jpg
+map_Bump models/House/Building_Nor.jpg
 map_Ks textures\\AussenWand_C.jpg
 refl textures\\Reflexion.jpg
 
@@ -276,7 +276,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Bump textures\\Building_Nor.jpg
+map_Bump models/House/Building_Nor.jpg
 map_Kd textures\\AussenWand_C.jpg
 map_Ks textures\\AussenWand_C.jpg
 refl textures\\Reflexion.jpg
@@ -291,7 +291,7 @@ Ni 1.000000
 d 1.000000
 illum 2
 map_Kd textures\building_col_3.JPG
-map_Bump textures\\Building_Nor.jpg
+map_Bump models/House/Building_Nor.jpg
 map_Ks textures\\AussenWand_C.jpg
 refl textures\\Reflexion.jpg
 
@@ -305,7 +305,7 @@ Ni 1.000000
 d 1.000000
 illum 2
 map_Kd C:\Users\the3dpc\Desktop\Futuristic Apartment Buildung\BGE_Building60\textures\builing_col.jpg
-map_Bump textures\\Building_Nor.jpg
+map_Bump models/House/Building_Nor.jpg
 map_Ks textures\\AussenWand_C.jpg
 refl textures\\Reflexion.jpg
 
@@ -330,7 +330,7 @@ Ni 1.000000
 d 1.000000
 illum 2
 map_Kd textures\building_col_3.JPG
-map_Bump textures\\WCtiles_N.jpg
+map_Bump models/House/WCtiles_N.jpg
 map_Ks textures\\AussenWand_C.jpg
 refl textures\\Reflexion.jpg
 
@@ -344,7 +344,7 @@ Ni 1.000000
 d 1.000000
 illum 1
 map_Kd C:\Users\the3dpc\Desktop\Futuristic Apartment Buildung\BGE_Building60\textures\builing_col.jpg
-map_Bump textures\\Building_Nor.jpg
+map_Bump models/House/Building_Nor.jpg
 map_Ks textures\\AussenWand_C.jpg
 refl textures\\Reflexion.jpg
 
@@ -358,7 +358,7 @@ Ni 1.000000
 d 1.000000
 illum 2
 map_Kd C:\Users\the3dpc\Desktop\Futuristic Apartment Buildung\BGE_Building60\textures\builing_col.jpg
-map_Bump textures\\Building_Nor.jpg
+map_Bump models/House/Building_Nor.jpg
 
 newmtl ceiling_white_1.001
 Ns 96.078431
@@ -369,5 +369,5 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 1
-map_Bump textures\\wallpaper nor.jpg
+map_Bump models/House/wallpaper_nor.jpg
 map_Kd textures\\building_col_3.JPG

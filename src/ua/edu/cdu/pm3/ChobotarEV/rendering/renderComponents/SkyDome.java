@@ -5,7 +5,7 @@ import ua.edu.cdu.pm3.ChobotarEV.rendering.util.SkyDomeVertex;
 
 public class SkyDome {
     public static int skyList;
-    int             radius  = 256;
+    int             radius  = 186;
     final double    radians = Math.PI / 180;
     final double    degrees = 180 / Math.PI;
     double          dPi     = 5.0,
@@ -26,7 +26,6 @@ public class SkyDome {
     vector is sin(φ), so we get φ by getting the arcsin and scaling it to the 0..1 range, this gives us
     the V coordinate we need.
 */
-    
     public void drawDome() {
         double  vx,
                 vy,

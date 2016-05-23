@@ -1,5 +1,7 @@
 package ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents;
 
+import java.nio.FloatBuffer;
+import org.lwjgl.BufferUtils;
 import static org.lwjgl.opengl.GL11.*;
 import ua.edu.cdu.pm3.ChobotarEV.mathPart.ColorsMap;
 import ua.edu.cdu.pm3.ChobotarEV.mathPart.HeightsMap;
@@ -18,6 +20,27 @@ public class Terrain {
         
         terrainList = glGenLists(1);
         glNewList(terrainList, GL_COMPILE);
+        
+//        float[] a = new float[4]; a[0] = 0; a[1] = 0; a[2] = 0; a[3] = 0;
+//        float[] d = new float[4]; d[0] = 0; d[1] = 0; d[2] = 0; d[3] = 0;
+//        float[] s = new float[4]; s[0] = 0; s[1] = 0; s[2] = 0; s[3] = 0;
+//        float[] as = new float[4]; as[0] = 0; as[1] = 0; as[2] = 0; as[3] = 0;
+//        
+//        FloatBuffer ka = BufferUtils.createFloatBuffer(4);
+//        ka.put(a); ka.position(0);
+//        FloatBuffer kd = BufferUtils.createFloatBuffer(4);
+//        kd.put(d); kd.position(0);
+//        FloatBuffer ks = BufferUtils.createFloatBuffer(4);
+//        ks.put(s); ks.position(0);
+//        FloatBuffer ka = BufferUtils.createFloatBuffer(4);
+//        ka.put(a); ka.position(0);
+        
+//        glMaterial(GL_FRONT_AND_BACK, GL_AMBIENT, ka);
+//        glMaterial(GL_FRONT_AND_BACK, GL_DIFFUSE, kd);
+//        glMaterial(GL_FRONT_AND_BACK, GL_SPECULAR, ks);
+//        glMaterial(GL_FRONT_AND_BACK, GL_EMISSION, 0f);
+//        glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, ns); 
+        
         for(int x=0; x<(heights.height.length-1); x++)
             for(int y=0; y<(heights.height[x].length-1); y++) {
 //                          x                   y                                   z
@@ -41,6 +64,8 @@ public class Terrain {
                           colors.getBlueAt(x+1, y+1)*heights.getHeightAt(x+1, y+1));
                 glVertex3f((x+1)*zoom,  heights.getHeightAt(x+1, y+1)*maxY,     (y+1)*zoom);
                 glEnd();
+                
+                
             }
         
         glEndList();

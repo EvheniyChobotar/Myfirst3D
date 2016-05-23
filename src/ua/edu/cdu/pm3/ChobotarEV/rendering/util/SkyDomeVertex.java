@@ -7,9 +7,6 @@ public class SkyDomeVertex {
     public static double u[];
     public static double v[];
 
-
-
-   
     public SkyDomeVertex(int NumOfVertices) {
         
         this.x = new double[NumOfVertices];
@@ -17,10 +14,9 @@ public class SkyDomeVertex {
         this.z = new double[NumOfVertices];
         this.u = new double[NumOfVertices];
         this.v = new double[NumOfVertices];
-        
     }
     
-     public static double getX(int i) {
+    public static double getX(int i) {
         return x[i];
     }
 

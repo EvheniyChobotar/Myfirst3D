@@ -22,7 +22,7 @@ public class MTLLoader {
             Texture tex = null;
             while((line = reader.readLine()) != null) {
                 if(line.startsWith("newmtl ") ) {
-                      name = line.split(" ")[1];
+                    name = line.split(" ")[1];
                 }else
                     
                 if(line.startsWith("Ns ")) {
@@ -34,7 +34,7 @@ public class MTLLoader {
                     ka[0] = Float.valueOf(line.split(" ")[1]);
                     ka[1] = Float.valueOf(line.split(" ")[2]);
                     ka[2] = Float.valueOf(line.split(" ")[3]);
-                    ka[3] = 1;
+                    ka[3] = 0;
                 }else
                     
                 if(line.startsWith("Kd ")) {
@@ -42,7 +42,7 @@ public class MTLLoader {
                     kd[0] = Float.valueOf(line.split(" ")[1]);
                     kd[1] = Float.valueOf(line.split(" ")[2]);
                     kd[2] = Float.valueOf(line.split(" ")[3]);
-                    kd[3] = 1;
+                    kd[3] = 0;
                 }else
                     
                 if(line.startsWith("Ks ")) {
@@ -50,19 +50,16 @@ public class MTLLoader {
                     ks[0] = Float.valueOf(line.split(" ")[1]);
                     ks[1] = Float.valueOf(line.split(" ")[2]);
                     ks[2] = Float.valueOf(line.split(" ")[3]);
-                    ks[3] = 1;
+                    ks[3] = 0;
                 }else
                     
                 if(line.startsWith("d ")) {
                     d = Float.valueOf(line.split(" ")[1]);
-                   model.materials.add(new Material(name, tex, ka, kd, ks, ns, d));
+                    model.materials.add(new Material(name, tex, ka, kd, ks, ns, d));
                 }else
-                    
                 if(line.startsWith("map_Kd ")) {
 //                    tex = TexturesLoader.loadTextures(line.split(" ")[1]);
-                    
                 }
-                
             }
             reader.close();
         } catch (Exception e) {}

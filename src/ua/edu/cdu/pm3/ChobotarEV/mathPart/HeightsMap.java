@@ -7,7 +7,6 @@ public class HeightsMap {
     public String path;
     //An array of points to represent the y value at a given point (x,z)
     public float[][]    height;
-   
     
     public  HeightsMap() {
         HeightsMapLoader heightsMapLoader = new HeightsMapLoader();

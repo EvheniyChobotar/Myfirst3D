@@ -7,7 +7,6 @@ import org.lwjgl.opengl.DisplayMode;
 public class Window {
     int frameRate = 60;
     public void createWindow(int width, int height, String title) {
-        
         Display.setTitle(title);
         DisplayMode mode = new DisplayMode(width,height);
         try {

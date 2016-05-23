@@ -35,12 +35,13 @@ public class Management {
             keyboard.createKeyboard();
         textures = new Textures();
             textures.initializeTextures();
-//            
-//        terrain = new Terrain();
-//            terrain.drawTerrain();  
-//        sky = new SkyDome();
-//            sky.calculateDomeCoordinates();
-//            sky.drawDome();
+            
+        terrain = new Terrain();
+            terrain.drawTerrain();  
+            
+        sky = new SkyDome();
+            sky.calculateDomeCoordinates();
+            sky.drawDome();
 
         model = new Model();
             model.initializeModels();
@@ -50,7 +51,6 @@ public class Management {
             
         //      init player behavior 
         camera      = new Camera();
-        //Generate the terrain and store in video memory
                
 //      var for flexible run customization                        
         isRunning = false;

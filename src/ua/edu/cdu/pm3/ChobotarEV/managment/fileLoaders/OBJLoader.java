@@ -60,7 +60,7 @@ public class OBJLoader {
 
                     // texture indexes
                     
-                    float  tx = 0,
+                    float   tx = 0,
                             ty =0,
                             tz =0,
                             tw = 0;
@@ -97,10 +97,6 @@ public class OBJLoader {
         } catch (IOException io) {
             return null;
         }
-    }
-    
-    public static void MTLparser() {
-        
     }
     
 }

@@ -43,6 +43,4 @@ public class Input {
     public void dispose() {
         Keyboard.destroy();
     }
-
-
 }

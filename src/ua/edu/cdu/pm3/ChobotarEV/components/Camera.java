@@ -18,7 +18,7 @@ public class Camera {
                     strafeLeft      = false, 
                     strafeRight     = false;
 
-    final float speed       = 0.1f;
+    final float speed       = 0.15f;
  
     public void update() {
         updatePrevious();
@@ -54,8 +54,6 @@ public class Camera {
 	
     public void render() {
         new Render().clearScreen();
-       
-       //translatePostion();
 //      This is the code that changes 3D perspective to the camera's perspective.
         glRotatef(rotation.x, 1, 0, 0);
         glRotatef(rotation.y, 0, 1, 0);
@@ -63,12 +61,11 @@ public class Camera {
 //      -moveVector.y-1.4f means that your y is your feet, and y+2.4 is your head.
         glTranslatef(-moveVector.x, -moveVector.y-1.4f, -moveVector.z);
         
-//        moveVector.y = Terrain.heights.calculateHeight(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
+        moveVector.y = Terrain.heights.calculateHeight(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
         
-//        glCallList(Terrain.terrainList);
-//        glCallList(SkyDome.skyList);
+        glCallList(Terrain.terrainList);
+        glCallList(SkyDome.skyList);
         glCallList(Model.modelList);
-        
     }
 
     public void updatePrevious() {

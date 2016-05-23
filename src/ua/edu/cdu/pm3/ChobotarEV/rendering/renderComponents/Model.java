@@ -33,24 +33,33 @@ public class Model {
     
     public void drawModel(Model model) {
 //        glPolygonMode (GL_FRONT_AND_BACK, GL_LINE);
-//        glColor3f(0.7f, 0, 0);
         modelList = glGenLists(2);
        
         glNewList(modelList, GL_COMPILE);
         
-        glEnable(GL_LIGHTING);
-        glEnable(GL_LIGHT0);
+//        glEnable(GL_LIGHTING);
+//        glEnable(GL_LIGHT0);
         glEnable(GL_AMBIENT);
         glEnable(GL_DIFFUSE);
         glEnable(GL_SPECULAR);
         
         int currentMaterial = 0;
         Material material = model.materials.get(currentMaterial);
-        setMaterial(material.texture,material.ambientColor,material.diffuseColor,material.specularColor,material.specularExponent);
+        setMaterial(material.texture,
+                    material.ambientColor,
+                    material.diffuseColor,
+                    material.specularColor,
+                    material.specularExponent);
         for(Face face : model.faces) {
+            
             if(!face.oName.equals(material.materialName)) {
                 material = model.materials.get(findInd(model,face.oName));
-                setMaterial(material.texture,material.ambientColor,material.diffuseColor,material.specularColor,material.specularExponent);
+                
+                setMaterial(material.texture,
+                        material.ambientColor,
+                        material.diffuseColor,
+                        material.specularColor,
+                        material.specularExponent);
             }
             
             glBegin(GL_QUADS);
@@ -87,15 +96,14 @@ public class Model {
             } catch (ArrayIndexOutOfBoundsException e) {}
             
             glEnd();
-
+             
         }
         System.err.println("finish");
         glEndList();
-        
+         
     }
     
-    public void setMaterial(Texture texture,FloatBuffer ka,FloatBuffer kd,FloatBuffer ks,float ns) {
-        
+    public void setMaterial(Texture texture, FloatBuffer ka, FloatBuffer kd, FloatBuffer ks, float ns) {
 //        System.err.println(texture.getTextureID());
 //        glBindTexture(GL_TEXTURE_2D,texture.getTextureID());
         glMaterial(GL_FRONT_AND_BACK, GL_AMBIENT, ka);

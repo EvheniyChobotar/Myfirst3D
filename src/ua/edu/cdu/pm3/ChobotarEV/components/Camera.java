@@ -10,7 +10,7 @@ import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Terrain;
 
 public class Camera {
 
-    Vector3f moveVector     = new Vector3f(10,0,15);
+    Vector3f moveVector     = new Vector3f(5,0,5);
     Vector3f rotation       = new Vector3f();
     Vector3f vectorPrevious = new Vector3f();
     static boolean  moveForward     = false, 
@@ -64,9 +64,10 @@ public class Camera {
         glTranslatef(-moveVector.x, -moveVector.y-1.4f, -moveVector.z);
         
 //        moveVector.y = Terrain.heights.calculateHeight(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
-        glCallList(Model.objectList);
+        
 //        glCallList(Terrain.terrainList);
 //        glCallList(SkyDome.skyList);
+        glCallList(Model.modelList);
         
     }
 

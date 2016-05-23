@@ -7,13 +7,12 @@ import java.io.IOException;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.util.vector.Vector4f;
-import org.newdawn.slick.opengl.Texture;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Face;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Model;
 
 public class OBJLoader {
     
-    public static Model loadModel(File file) {
+    public static Model parseOBJfile(File file) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader("res/models/"+file));
             Model model = new Model();
@@ -66,14 +65,14 @@ public class OBJLoader {
                             tz =0,
                             tw = 0;
                     try {
-                       tx = Float.valueOf(line.split(" ")[1].split("/")[1]);
+                            tx = Float.valueOf(line.split(" ")[1].split("/")[1]);
                             ty = Float.valueOf(line.split(" ")[2].split("/")[1]) ;
                             tz = Float.valueOf(line.split(" ")[3].split("/")[1]);
                             tw = Float.valueOf(line.split(" ")[4].split("/")[1]);
                     
                         
-                    } catch (NumberFormatException n) {
-                    }
+                    }   catch (ArrayIndexOutOfBoundsException n) {}
+                        catch (NumberFormatException n) {}
                     Vector4f textureIndeces = new Vector4f(tx,ty,tz,tw);
 
                     // normal indexes
@@ -86,8 +85,8 @@ public class OBJLoader {
                         ny = Float.valueOf(line.split(" ")[2].split("/")[2]);
                         nz = Float.valueOf(line.split(" ")[3].split("/")[2]);
                         nw = Float.valueOf(line.split(" ")[4].split("/")[2]);
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                    }
+                    } catch (ArrayIndexOutOfBoundsException e) {}
+                      catch (NumberFormatException n) {}
 
                     Vector4f normalIndeces = new Vector4f(nx,ny,nz,nw);
                     model.faces.add(new Face(vertexIndeces, normalIndeces, textureIndeces, oName));

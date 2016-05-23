@@ -35,8 +35,8 @@ public class SkyDome {
 //        glPolygonMode (GL_FRONT_AND_BACK, GL_LINE);
         skyList = glGenLists(3);
         glNewList(skyList, GL_COMPILE);
+        Textures.textureSky.bind();
         glBegin(GL_TRIANGLE_STRIP);
-                
         for(int i = 0; i<numOfVertices;i++) {
             glColor3f(1f,1f,1f);
             vx = Vertices.x[i];

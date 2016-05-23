@@ -18,8 +18,6 @@ public class Terrain {
         
         terrainList = glGenLists(1);
         glNewList(terrainList, GL_COMPILE);
-        //textureStone.bind();
-        
         for(int x=0; x<(heights.height.length-1); x++)
             for(int y=0; y<(heights.height[x].length-1); y++) {
 //                          x                   y                                   z

@@ -33,21 +33,17 @@ public class Management {
 //      init input system (keyoard and mouse)                        
         keyboard    = new Input();	
             keyboard.createKeyboard();
-            
-        terrain = new Terrain();
-//            terrain.drawTerrain();
         textures = new Textures();
-//            textures.initializeTextures();            
+            textures.initializeTextures();
+//            
+//        terrain = new Terrain();
+//            terrain.drawTerrain();  
+//        sky = new SkyDome();
+//            sky.calculateDomeCoordinates();
+//            sky.drawDome();
 
         model = new Model();
             model.initializeModels();
-            model.drawModel();
-            
-        
-            
-        sky = new SkyDome();
-//            sky.calculateDomeCoordinates();
-//            sky.drawDome();
             
         render      = new Render();
             render.initialize3D();

@@ -39,10 +39,10 @@ public class Model {
         
 //        glEnable(GL_LIGHTING);
 //        glEnable(GL_LIGHT0);
-        glEnable(GL_AMBIENT);
-        glEnable(GL_DIFFUSE);
-        glEnable(GL_SPECULAR);
-        
+//        glEnable(GL_AMBIENT);
+//        glEnable(GL_DIFFUSE);
+//        glEnable(GL_SPECULAR);
+//        
         int currentMaterial = 0;
         Material material = model.materials.get(currentMaterial);
         setMaterial(material.texture,

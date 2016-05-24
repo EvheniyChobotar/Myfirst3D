@@ -35,17 +35,17 @@ public class Management {
             keyboard.createKeyboard();
         textures = new Textures();
             textures.initializeTextures();
-            
+//            
         terrain = new Terrain();
             terrain.drawTerrain();  
-            
+//            
         sky = new SkyDome();
             sky.calculateDomeCoordinates();
             sky.drawDome();
 
-        model = new Model();
-            model.initializeModels();
-            
+//        model = new Model();
+//            model.initializeModels();
+//            
         render      = new Render();
             render.initialize3D();
             
@@ -71,7 +71,6 @@ public class Management {
         }
         stop();
     }
-    
     
     public  void update() {
         window.update();

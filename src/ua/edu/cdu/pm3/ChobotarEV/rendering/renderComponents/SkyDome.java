@@ -1,6 +1,7 @@
 package ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents;
 
 import static org.lwjgl.opengl.GL11.*;
+import org.newdawn.slick.opengl.Texture;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.util.SkyDomeVertex;
 
 public class SkyDome {
@@ -10,6 +11,7 @@ public class SkyDome {
     final double    degrees = 180 / Math.PI;
     double          dPi     = 5.0,
                     dTheta  = 5.0;
+    private Texture  sky     = Textures.textureSky;
 //we are using strips, to connect the dots, and each strip is made up of 4 vertices,
 //we need to multiply that result by 4 to get the actual number    
     int             numOfVertices =(int) ((360/dTheta)*(90/dPi)*4);
@@ -31,23 +33,19 @@ public class SkyDome {
                 vy,
                 vz,
                 magnitude;
-//        glPolygonMode (GL_FRONT_AND_BACK, GL_LINE);
         skyList = glGenLists(3);
         glNewList(skyList, GL_COMPILE);
-        Textures.textureSky.bind();
+        glBindTexture(GL_TEXTURE_2D,sky.getTextureID());
         glBegin(GL_TRIANGLE_STRIP);
         for(int i = 0; i<numOfVertices;i++) {
-            glColor3f(1f,1f,1f);
             vx = Vertices.x[i];
             vy = Vertices.y[i];
             vz = Vertices.z[i];
             
             magnitude = (float)Math.sqrt(Math.pow(vx, 2) + Math.pow(vy, 2) + Math.pow(vz, 2));
-            
             vx/=magnitude;
             vy/=magnitude;
             vz/=magnitude;
-            
 //          We add 0.5 to scale U and V so they fall within the 0 and 1 range we need.  
             Vertices.u[i] = (float)(Math.atan2(vx, vz)/(Math.PI*2))+0.5f;
             Vertices.v[i] = (float)(Math.asin(vy)/Math.PI) + 0.5f;

@@ -28,4 +28,28 @@ public class HeightsMapLoader {
         }
         return height;
     }
+    
+    public float[] loadNewHeightsMap(String fname, float[] map) {
+        try {
+            BufferedImage image = ImageIO.read(new File(fname));
+            int mapSize = image.getWidth()*image.getHeight();
+            map = new float[mapSize*3];
+            for(int x=0;x<image.getWidth();x++){
+                for(int z=0;z<image.getHeight();z++){
+                    //Set the Y value. We can use Red because we expect the heightmap
+                    //to be black and white, so all the RGB values would be the same.
+                    //(Red value = Blue value = Green value) We just use red cause it's cool.
+                    
+                    Color col = new Color(image.getRGB(x, z));
+                    map[x] = x;
+                    map[x+1] = (col.getRed())/255f;
+                    map[x+2] = z;
+                    //That also means this would spit out 'true':
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return map;
+    }
 }

@@ -65,7 +65,7 @@ public class Camera {
         
         glCallList(Terrain.terrainList);
         glCallList(SkyDome.skyList);
-        glCallList(Model.modelList);
+//        glCallList(Model.modelList);
     }
 
     public void updatePrevious() {

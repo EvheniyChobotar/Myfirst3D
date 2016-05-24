@@ -1,18 +1,16 @@
 package ua.edu.cdu.pm3.ChobotarEV.mathPart;
 
+import java.nio.FloatBuffer;
+import java.nio.IntBuffer;
+import org.lwjgl.BufferUtils;
 import ua.edu.cdu.pm3.ChobotarEV.managment.fileLoaders.HeightsMapLoader;
 
 public class HeightsMap {
-    
-    public String path;
     //An array of points to represent the y value at a given point (x,z)
     public float[][]    height;
     
     public  HeightsMap() {
-        HeightsMapLoader heightsMapLoader = new HeightsMapLoader();
-        this.path   = "res/map/heights.png";
-        this.height = heightsMapLoader.loadHeightsMap(path, height);
-        
+        this.height = new HeightsMapLoader().loadHeightsMap("res/map/heights.png", height);
     }
    
     public float getHeightAt(int x, int z){

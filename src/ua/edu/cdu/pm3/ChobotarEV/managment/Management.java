@@ -10,7 +10,7 @@ import org.lwjgl.opengl.Display;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Model;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.SkyDome;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Terrain;
-import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Textures;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.util.Textures;
 
 public class Management {
 
@@ -36,16 +36,16 @@ public class Management {
         textures = new Textures();
             textures.initializeTextures();
 //            
-        terrain = new Terrain();
-            terrain.drawTerrain();  
-//            
-        sky = new SkyDome();
-            sky.calculateDomeCoordinates();
-            sky.drawDome();
+//        terrain = new Terrain();
+//            terrain.drawTerrain();  
+////            
+//        sky = new SkyDome();
+//            sky.calculateDomeCoordinates();
+//            sky.drawDome();
 
-//        model = new Model();
-//            model.initializeModels();
-//            
+        model = new Model();
+            model.initializeModels();
+            
         render      = new Render();
             render.initialize3D();
             

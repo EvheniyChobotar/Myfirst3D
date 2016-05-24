@@ -1,8 +1,9 @@
 package ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents;
 
+import ua.edu.cdu.pm3.ChobotarEV.rendering.util.Textures;
 import static org.lwjgl.opengl.GL11.*;
-import ua.edu.cdu.pm3.ChobotarEV.mathPart.ColorsMap;
-import ua.edu.cdu.pm3.ChobotarEV.mathPart.HeightsMap;
+import ua.edu.cdu.pm3.ChobotarEV.map.ColorsMap;
+import ua.edu.cdu.pm3.ChobotarEV.map.HeightsMap;
 
 public class Terrain {
     

@@ -12,7 +12,6 @@ public class Camera {
 
     Vector3f moveVector     = new Vector3f(5,0,5);
     Vector3f rotation       = new Vector3f();
-    Vector3f vectorPrevious = new Vector3f();
     static boolean  moveForward     = false, 
                     moveBackward    = false,
                     strafeLeft      = false, 
@@ -21,7 +20,6 @@ public class Camera {
     final float speed       = 0.15f;
  
     public void update() {
-        updatePrevious();
         input();
         updateVector();
     }
@@ -61,18 +59,11 @@ public class Camera {
 //      -moveVector.y-1.4f means that your y is your feet, and y+2.4 is your head.
         glTranslatef(-moveVector.x, -moveVector.y-1.4f, -moveVector.z);
         
-        moveVector.y = Terrain.heights.calculateHeight(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
+//        moveVector.y = Terrain.heights.calculateHeight(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
         
-        glCallList(Terrain.terrainList);
-        glCallList(SkyDome.skyList);
-//        glCallList(Model.modelList);
-    }
-
-    public void updatePrevious() {
-        //Update last position (for collisions (later))
-        vectorPrevious.x = moveVector.x;
-        vectorPrevious.y = moveVector.y;
-        vectorPrevious.z = moveVector.z;
+//        glCallList(Terrain.terrainList);
+//        glCallList(SkyDome.skyList);
+        glCallList(Model.modelList);
     }
 
     public void input() {

@@ -1,4 +1,4 @@
-package ua.edu.cdu.pm3.ChobotarEV.mathPart;
+package ua.edu.cdu.pm3.ChobotarEV.map;
 
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;

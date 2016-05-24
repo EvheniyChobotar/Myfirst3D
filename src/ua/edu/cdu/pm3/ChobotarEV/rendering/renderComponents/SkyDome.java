@@ -1,5 +1,6 @@
 package ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents;
 
+import ua.edu.cdu.pm3.ChobotarEV.rendering.util.Textures;
 import static org.lwjgl.opengl.GL11.*;
 import org.newdawn.slick.opengl.Texture;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.util.SkyDomeVertex;
@@ -11,7 +12,6 @@ public class SkyDome {
     final double    degrees = 180 / Math.PI;
     double          dPi     = 5.0,
                     dTheta  = 5.0;
-    private Texture  sky     = Textures.textureSky;
 //we are using strips, to connect the dots, and each strip is made up of 4 vertices,
 //we need to multiply that result by 4 to get the actual number    
     int             numOfVertices =(int) ((360/dTheta)*(90/dPi)*4);
@@ -35,7 +35,7 @@ public class SkyDome {
                 magnitude;
         skyList = glGenLists(3);
         glNewList(skyList, GL_COMPILE);
-        glBindTexture(GL_TEXTURE_2D,sky.getTextureID());
+        glBindTexture(GL_TEXTURE_2D,Textures.textureSky.getTextureID());
         glBegin(GL_TRIANGLE_STRIP);
         for(int i = 0; i<numOfVertices;i++) {
             vx = Vertices.x[i];

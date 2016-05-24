@@ -1,4 +1,4 @@
-package ua.edu.cdu.pm3.ChobotarEV.mathPart;
+package ua.edu.cdu.pm3.ChobotarEV.map;
 
 import ua.edu.cdu.pm3.ChobotarEV.managment.fileLoaders.ColorMapLoader;
 

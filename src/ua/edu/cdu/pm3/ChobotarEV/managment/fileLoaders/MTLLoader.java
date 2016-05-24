@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import org.newdawn.slick.opengl.Texture;
-import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Material;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.util.Material;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Model;
 
 public class MTLLoader {

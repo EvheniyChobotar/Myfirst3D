@@ -1,4 +1,4 @@
-package ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents;
+package ua.edu.cdu.pm3.ChobotarEV.rendering.util;
 
 import java.nio.FloatBuffer;
 import org.lwjgl.BufferUtils;

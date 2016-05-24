@@ -1,5 +1,7 @@
 package ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents;
 
+import ua.edu.cdu.pm3.ChobotarEV.rendering.util.Material;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.util.Face;
 import java.io.File;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
@@ -18,9 +20,9 @@ public class Model {
     public List<Face>       faces           = new ArrayList<Face>();
     public static 
             List<Material>   materials       = new ArrayList<Material>();
-    public float posX       =10;//60;
-    public float posY       =0;//30;
-    public float posZ       =10;//55;
+    public int posX       =10;//60;
+    public int posY       =0;//30;
+    public int posZ       =10;//55;
     public static int       modelList;
     public static Model     house;
    
@@ -28,20 +30,20 @@ public class Model {
     public void initializeModels() {
         house = OBJLoader.parseOBJfile(new File("House1/house.obj"));
         MTLLoader.parseMTLfile(house,new File("House1/house.mtl"));
-        drawModel(house);
+        drawModel(house,posX,posY,posZ);
     }
     
-    public void drawModel(Model model) {
+    public void drawModel(Model model,int posX,int posY,int posZ) {
 //        glPolygonMode (GL_FRONT_AND_BACK, GL_LINE);
         modelList = glGenLists(2);
        
         glNewList(modelList, GL_COMPILE);
         
-//        glEnable(GL_LIGHTING);
-//        glEnable(GL_LIGHT0);
-//        glEnable(GL_AMBIENT);
-//        glEnable(GL_DIFFUSE);
-//        glEnable(GL_SPECULAR);
+        glEnable(GL_LIGHTING);
+        glEnable(GL_LIGHT0);
+        glEnable(GL_AMBIENT);
+        glEnable(GL_DIFFUSE);
+        glEnable(GL_SPECULAR);
 //        
         int currentMaterial = 0;
         Material material = model.materials.get(currentMaterial);

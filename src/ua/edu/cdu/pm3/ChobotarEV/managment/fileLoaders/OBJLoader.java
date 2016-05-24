@@ -7,7 +7,7 @@ import java.io.IOException;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.util.vector.Vector4f;
-import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Face;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.util.Face;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Model;
 
 public class OBJLoader {

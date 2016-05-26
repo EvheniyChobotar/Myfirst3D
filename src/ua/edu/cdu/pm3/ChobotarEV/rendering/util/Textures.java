@@ -5,16 +5,16 @@ import ua.edu.cdu.pm3.ChobotarEV.managment.fileLoaders.TexturesLoader;
 
 public class Textures {
     String  resourcesPath   = "textures/",
-            sky             = "sky.jpg",
-            white           = "white.jpg",
-            colorMap        = "colors1.png";
+            sky             = "sky1.jpg",
+            clouds          = "Clouds.png",
+            colorMap        = "colors.png";
     
     public static Texture   textureSky,
-                            textureWhite,
-                            textureMap;
+                            textureMap,
+                            textureClouds;
     public void initializeTextures() {
         textureSky   = new TexturesLoader().loadTextures(resourcesPath+sky);
-        textureWhite = new TexturesLoader().loadTextures(resourcesPath+white);
         textureMap   = new TexturesLoader().loadTextures(resourcesPath+colorMap);
+        textureClouds   = new TexturesLoader().loadTextures(resourcesPath+clouds);
     }
 }

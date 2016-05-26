@@ -7,6 +7,7 @@ import ua.edu.cdu.pm3.ChobotarEV.components.Input;
 import ua.edu.cdu.pm3.ChobotarEV.main.Main;
 
 import org.lwjgl.opengl.Display;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Light;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Model;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.SkyDome;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Terrain;
@@ -22,6 +23,7 @@ public class Management {
     Model       model;
     Textures    textures;
     SkyDome     sky;
+    Light       light;
     
     boolean isRunning;
     
@@ -35,16 +37,18 @@ public class Management {
             keyboard.createKeyboard();
         textures = new Textures();
             textures.initializeTextures();
+            
+        terrain = new Terrain();
+            terrain.drawTerrain();  
 //            
-//        terrain = new Terrain();
-//            terrain.drawTerrain();  
-////            
-//        sky = new SkyDome();
-//            sky.calculateDomeCoordinates();
-//            sky.drawDome();
-
-        model = new Model();
-            model.initializeModels();
+        sky = new SkyDome();
+//
+//        model = new Model();
+//            model.initializeModels();
+            
+//        light = new Light();
+//            light.init();
+            
             
         render      = new Render();
             render.initialize3D();
@@ -77,6 +81,8 @@ public class Management {
         keyboard.update();
         camera.render();
         camera.update();
+        
+//        light.update();
 
     }
     

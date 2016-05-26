@@ -17,6 +17,7 @@ public class Render {
 //      glu(visionAngle,cutObjetsOverVisionZoneNear,cutObjetsOverVisionZoneFar,visionDepth)
         GLU.gluPerspective((float) 60, Display.getDisplayMode().getWidth()/ Display.getDisplayMode().getHeight(), 0.001f,350);
         glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 //      matrix of currenc active camera
         glMatrixMode(GL_MODELVIEW);
          

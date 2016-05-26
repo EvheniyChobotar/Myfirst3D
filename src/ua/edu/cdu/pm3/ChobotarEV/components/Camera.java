@@ -10,14 +10,14 @@ import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Terrain;
 
 public class Camera {
 
-    Vector3f moveVector     = new Vector3f(5,0,5);
-    Vector3f rotation       = new Vector3f();
-    static boolean  moveForward     = false, 
-                    moveBackward    = false,
-                    strafeLeft      = false, 
-                    strafeRight     = false;
+    public Vector3f moveVector     = new Vector3f(5,0,5);
+    public Vector3f rotation       = new Vector3f();
+    public static boolean   moveForward     = false, 
+                            moveBackward    = false,
+                            strafeLeft      = false, 
+                            strafeRight     = false;
 
-    final float speed       = 0.15f;
+    public final float      speed       = 0.15f;
  
     public void update() {
         input();
@@ -59,17 +59,21 @@ public class Camera {
 //      -moveVector.y-1.4f means that your y is your feet, and y+2.4 is your head.
         glTranslatef(-moveVector.x, -moveVector.y-1.4f, -moveVector.z);
         
-//        moveVector.y = Terrain.heights.calculateHeight(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
+//      -moveVector.y-1.4f means that your y is your feet, and y+2.4 is your head.
         
-//        glCallList(Terrain.terrainList);
-//        glCallList(SkyDome.skyList);
-        glCallList(Model.modelList);
+        moveVector.y = Terrain.heights.calculateHeight(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
+        
+        glCallList(Terrain.terrainList);
+        glCallList(SkyDome.skyList);
+        SkyDome.rotation();
+        glCallList(SkyDome.cloudsList);
+//        glCallList(Model.modelList);
     }
 
     public void input() {
         if(Mouse.isGrabbed()){
-            float mouseDX = Mouse.getDX() * 0.8f * 0.16f;
-            float mouseDY = Mouse.getDY() * 0.8f * 0.16f;
+            float mouseDX = Mouse.getDX() * 0.16f;
+            float mouseDY = Mouse.getDY() * 0.16f;
             if (rotation.y + mouseDX >= 360) {
                 rotation.y = rotation.y + mouseDX - 360;
                 

@@ -27,3 +27,12 @@ public class Material {
     }
     
 }
+
+/* 
+GL_AMBIENT - фонове світло(відбиваєтсья від поверхонь )
+GL_DIFFUSE  тоже рассеянный свет
+GL_SPECULAR отраженный свет
+GL_EMISSION излучаемый свет
+GL_SHININESS степень отраженного света
+GL_AMBIENT_AND_DIFFUSE оба рассеянных света
+*/

@@ -1,18 +1,17 @@
 package ua.edu.cdu.pm3.ChobotarEV.map;
 
-import java.nio.FloatBuffer;
-import java.nio.IntBuffer;
-import org.lwjgl.BufferUtils;
 import ua.edu.cdu.pm3.ChobotarEV.managment.fileLoaders.HeightsMapLoader;
 
 public class HeightsMap {
     //An array of points to represent the y value at a given point (x,z)
-    public float[][]    height;
+    public static float[][]    height;
     
     public  HeightsMap() {
-        this.height = new HeightsMapLoader().loadHeightsMap("res/map/heights.png", height);
     }
    
+    public float[][] calculateHeights() {
+        return height = new HeightsMapLoader().loadHeightsMap("res/map/heights.png", height);
+    }
     public float getHeightAt(int x, int z){
         //Just returns the y value at the point x,z
         try {
@@ -23,7 +22,7 @@ public class HeightsMap {
     }
     
 //  bi-linear interpolation
-    public float calculateHeight(float x, float z){
+    public float calculateHeightAt(float x, float z){
 
         float x1, x2, y1, y2, Q11, Q12, Q21, Q22;
         x1 = (int) Math.floor(x);

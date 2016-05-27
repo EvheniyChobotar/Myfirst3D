@@ -8,9 +8,9 @@ import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Model;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.SkyDome;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Terrain;
 
-public class Camera {
+public class Camera extends Terrain{
 
-    public Vector3f moveVector     = new Vector3f(5,0,5);
+    public Vector3f moveVector     = new Vector3f(20,0,20);
     public Vector3f rotation       = new Vector3f();
     public static boolean   moveForward     = false, 
                             moveBackward    = false,
@@ -60,14 +60,16 @@ public class Camera {
         glTranslatef(-moveVector.x, -moveVector.y-1.4f, -moveVector.z);
         
 //      -moveVector.y-1.4f means that your y is your feet, and y+2.4 is your head.
-        
-        moveVector.y = Terrain.heights.calculateHeight(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
-        
-        glCallList(Terrain.terrainList);
+//        moveVector.y = Terrain.heights.calculateHeightAt(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
+//        glCallList(Terrain.terrainList);
+//        
+//        glCallList(Model.grassList1); 
+//        glCallList(Model.grassList2);
+//        glCallList(Model.grassList3);
+        glCallList(Model.houseList);
         glCallList(SkyDome.skyList);
         SkyDome.rotation();
         glCallList(SkyDome.cloudsList);
-//        glCallList(Model.modelList);
     }
 
     public void input() {

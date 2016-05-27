@@ -40,14 +40,14 @@ public class Management {
             
         terrain = new Terrain();
             terrain.drawTerrain();  
-//            
-        sky = new SkyDome();
-//
-//        model = new Model();
-//            model.initializeModels();
             
-//        light = new Light();
-//            light.init();
+        sky = new SkyDome();
+
+        model = new Model();
+            model.initializeModels();
+            
+        light = new Light();
+            
             
             
         render      = new Render();
@@ -81,8 +81,7 @@ public class Management {
         keyboard.update();
         camera.render();
         camera.update();
-        
-//        light.update();
+        light.render();
 
     }
     

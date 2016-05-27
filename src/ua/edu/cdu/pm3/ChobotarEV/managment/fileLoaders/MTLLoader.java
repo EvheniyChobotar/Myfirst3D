@@ -60,18 +60,16 @@ public class MTLLoader {
                 }else
                     
                 if(line.startsWith("Ni ")) {
-                //TODO
+                    //TODO
                 }else
                 if(line.startsWith("d ")) {
                     d = Float.valueOf(line.split(" ")[1]);
-                    
                 }else
                 if(line.startsWith("map_Kd ")) {
                     tex = TexturesLoader.loadTextures(line.split(" ")[1]);
 //                    System.err.println(name+" "+ tex.getTextureID()+" "+ ka[1]+" "+ kd[1]+" "+ ks[1]+" "+ ns+" "+d);
                     model.materials.add(new Material(name, tex, ka, kd, ks, ns, d));
                 }
-                   
             }
             reader.close();
         } catch (Exception e) {}

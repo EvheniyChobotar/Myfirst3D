@@ -11,8 +11,8 @@ public class SkyDome extends Textures{
     public int          domeRadius   =  250;
     public final double radians = Math.PI / 180;
     public final double degrees = 180 / Math.PI;
-    public double       dPi     = 10.0,
-                        dTheta  = 10.0;
+    public double       dPi     = 15.0,
+                        dTheta  = 15.0;
 //we are using strips, to connect the dots, and each strip is made up of 4 domeVertices,
 //we need to multiply that result by 4 to get the actual number    
     public int          numOfVertices =(int) ((180/dTheta)*(180/dPi)*4);

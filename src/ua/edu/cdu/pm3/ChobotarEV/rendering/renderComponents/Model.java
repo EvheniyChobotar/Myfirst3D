@@ -48,11 +48,6 @@ public class Model {
         posY = Terrain.heights.getHeightAt(posX*4, posZ*4)*maxY;
         grassList3 = drawModel(grass,posX,posY-0.7f,posZ,6);
 //        
-        house = OBJLoader.parseOBJfile(new File("House/house.obj"));
-        MTLLoader.parseMTLfile(house,new File("House/house.mtl"));
-        posX = 70; posZ = 60;
-        posY = Terrain.heights.getHeightAt(posX*4, posZ*4)*maxY;
-        houseList = drawModel(house, posX, posY, posZ, 7);
     }
     
     public int drawModel(Model model,int posX,float posY,int posZ,int numList) {
@@ -81,39 +76,39 @@ public class Model {
                 Vector3f normal1        = model.normals.get((int)face.normals.x - 1);
                 glVertex3f(vertices1.x+posX, vertices1.y+posY, vertices1.z+posZ);
                 glNormal3f(normal1.x, normal1.y, normal1.z);
-//                try {
-//                    Vector2f textureCoord1  = model.textureUV.get((int)face.textures.x - 1);
-//                    glTexCoord2f(textureCoord1.x,textureCoord1.y);
-//                } catch (ArrayIndexOutOfBoundsException e) {}
+                try {
+                    Vector2f textureCoord1  = model.textureUV.get((int)face.textures.x - 1);
+                    glTexCoord2f(textureCoord1.x,textureCoord1.y);
+                } catch (ArrayIndexOutOfBoundsException e) {}
                    
 
                 Vector3f vertices2      = model.vertices.get((int)face.vertices.y - 1);
                 Vector3f normal2        = model.normals.get((int)face.normals.y - 1);
                 glVertex3f(vertices2.x+posX, vertices2.y+posY, vertices2.z+posZ);
                 glNormal3f(normal2.x, normal2.y, normal2.z);
-//                try {
-//                    Vector2f textureCoord2  = model.textureUV.get((int)face.textures.y - 1);
-//                    glTexCoord2f(textureCoord2.x,textureCoord2.y);                
-//                } 
-//                catch (ArrayIndexOutOfBoundsException e) {}
+                try {
+                    Vector2f textureCoord2  = model.textureUV.get((int)face.textures.y - 1);
+                    glTexCoord2f(textureCoord2.x,textureCoord2.y);                
+                } 
+                catch (ArrayIndexOutOfBoundsException e) {}
             
                 Vector3f vertices3      = model.vertices.get((int)face.vertices.z - 1);
                 Vector3f normal3        = model.normals.get((int)face.normals.z - 1);
                 glVertex3f(vertices3.x+posX, vertices3.y+posY, vertices3.z+posZ);
                 glNormal3f(normal3.x, normal3.y, normal3.z);
-//                try {
-//                    Vector2f textureCoord3  = model.textureUV.get((int)face.textures.z - 1);
-//                    glTexCoord2f(textureCoord3.x,textureCoord3.y);
-//                }
-//                catch (ArrayIndexOutOfBoundsException e) {}
+                try {
+                    Vector2f textureCoord3  = model.textureUV.get((int)face.textures.z - 1);
+                    glTexCoord2f(textureCoord3.x,textureCoord3.y);
+                }
+                catch (ArrayIndexOutOfBoundsException e) {}
 
                 try{
                     Vector3f vertices4      = model.vertices.get((int)face.vertices.w - 1);
                     Vector3f normal4        = model.normals.get((int)face.normals.w - 1);
                     glVertex3f(vertices4.x+posX, vertices4.y+posY, vertices4.z+posZ);
                     glNormal3f(normal4.x, normal4.y, normal4.z);
-//                    Vector2f textureCoord4  = model.textureUV.get((int)face.textures.w - 1);
-//                    glTexCoord2f(textureCoord4.x,textureCoord4.y);
+                    Vector2f textureCoord4  = model.textureUV.get((int)face.textures.w - 1);
+                    glTexCoord2f(textureCoord4.x,textureCoord4.y);
                     
                 } catch (ArrayIndexOutOfBoundsException e) {}
             
@@ -129,7 +124,7 @@ public class Model {
     }
     
     public void setMaterial(Texture texture, FloatBuffer ka, FloatBuffer kd, FloatBuffer ks, float ns) {
-//        glBindTexture(GL_TEXTURE_2D,texture.getTextureID());
+        glBindTexture(GL_TEXTURE_2D,texture.getTextureID());
         glMaterial(GL_FRONT_AND_BACK, GL_AMBIENT, ka);
 //        glMaterial(GL_FRONT_AND_BACK, GL_DIFFUSE, kd);
         glMaterial(GL_FRONT_AND_BACK, GL_SPECULAR, ks);

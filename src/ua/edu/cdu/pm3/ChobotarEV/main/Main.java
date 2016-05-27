@@ -9,7 +9,7 @@ public class Main {
     public static final String  TITLE   = "SoM";
     
     public static void main(String[] args) {
-//      starting powerfull run system
+//      starting run system
         Management  manage = new Management();
         manage.initialize();
     }

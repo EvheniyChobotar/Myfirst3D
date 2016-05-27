@@ -8,12 +8,12 @@ import ua.edu.cdu.pm3.ChobotarEV.rendering.util.Buffers;
 public class Terrain {
     public static int       terrainList;
     public static float     zoom = 0.25f;
+    public float textureBit = 1.0f/512f;
     public static final int maxY = 40;
-    public static HeightsMap heights ;
+    public static HeightsMap heights = new HeightsMap() ;
 //    public static ColorsMap  colors;
     
     public void drawTerrain() {
-        heights = new HeightsMap();
         heights.calculateHeights();
 //        colors  = new ColorsMap();
         terrainList = glGenLists(1);
@@ -24,7 +24,7 @@ public class Terrain {
 
 //        glPolygonMode (GL_FRONT_AND_BACK, GL_LINE);
         glBindTexture(GL_TEXTURE_2D,Textures.textureMap.getTextureID());
-        float textureBit = 1.0f/512f;
+       
         for(int x=1; x<(heights.height.length-1); x+=2)
             for(int z=1; z<(heights.height[x].length-1); z++) {
                 glBegin(GL_TRIANGLE_FAN);

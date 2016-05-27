@@ -7,6 +7,7 @@ import org.lwjgl.util.vector.Vector3f;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Model;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.SkyDome;
 import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Terrain;
+import ua.edu.cdu.pm3.ChobotarEV.rendering.renderComponents.Water;
 
 public class Camera extends Terrain{
 
@@ -60,13 +61,15 @@ public class Camera extends Terrain{
         glTranslatef(-moveVector.x, -moveVector.y-1.4f, -moveVector.z);
         
 //      -moveVector.y-1.4f means that your y is your feet, and y+2.4 is your head.
-//        moveVector.y = Terrain.heights.calculateHeightAt(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
-//        glCallList(Terrain.terrainList);
+        moveVector.y = Terrain.heights.calculateHeightAt(moveVector.x*4, moveVector.z*4)*Terrain.maxY;
+        glCallList(Terrain.terrainList);
 //        
-//        glCallList(Model.grassList1); 
-//        glCallList(Model.grassList2);
-//        glCallList(Model.grassList3);
-        glCallList(Model.houseList);
+        glCallList(Model.grassList1); 
+        glCallList(Model.grassList2);
+        glCallList(Model.grassList3);
+//        glCallList(Model.houseList);
+
+        glCallList(Water.waterList);
         glCallList(SkyDome.skyList);
         SkyDome.rotation();
         glCallList(SkyDome.cloudsList);
